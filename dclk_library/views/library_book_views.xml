@@ -20,6 +20,7 @@
         <field name="model">library.book</field>
         <field name="arch" type="xml">
             <form string="Book">
+                <header/>
                 <sheet>
                     <group>
                         <field name="title"/>
@@ -46,8 +47,7 @@
     <menuitem
             id="menu_library_root"
             name="Library"
-            sequence="10"
-            groups="dclk_library.group_library_librarian"/>
+            sequence="10"/>
 
     <!-- SUBMENU -->
     <menuitem
@@ -55,7 +55,6 @@
             name="Books"
             parent="menu_library_root"
             action="action_library_book"
-            sequence="10"
-            groups="dclk_library.group_library_librarian"/>
+            sequence="10"/>
 
 </odoo>
