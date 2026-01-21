@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_library_book_form_inherit_button" model="ir.ui.view">
+        <field name="name">library.book.form.inherit.button</field>
+        <field name="model">library.book</field>
+        <field name="inherit_id" ref="dclk_library.view_library_book_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header" position="inside">
+                <button
+                        name="borrow_book"
+                        type="object"
+                        string="Borrow"
+                        class="btn-primary"
+                        invisible="is_borrowed"
+                        groups="dclk_library_extend.group_library_librarian"/>
+
+                <button
+                        name="return_book"
+                        type="object"
+                        string="Return Book"
+                        class="btn-primary"
+                        invisible="not is_borrowed"
+                        groups="dclk_library_extend.group_library_librarian"/>
+
+<!--                <field name="state" widget="statusbar"/>-->
+
+            </xpath>
+
+            <xpath expr="//form/sheet/group" position="inside">
+                <field name="is_borrowed"/>
+            </xpath>
+
+
+            <xpath expr="//sheet" position="after">
+                <chatter/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <!-- Limpiar grupos anteriores y asignar solo el tuyo al menú raíz -->
+    <record id="dclk_library.menu_library_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(5, 0), (4, ref('dclk_library_extend.group_library_librarian'))]"/>
+    </record>
+
+    <!-- Hacer lo mismo para el submenú -->
+    <record id="dclk_library.menu_library_books" model="ir.ui.menu">
+        <field name="groups_id" eval="[(5, 0), (4, ref('dclk_library_extend.group_library_librarian'))]"/>
+    </record>
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- FORM VIEW PARA EL WIZARD -->
+    <record id="view_book_reservations_form" model="ir.ui.view">
+        <field name="name">book.reservations.form</field>
+        <field name="model">book.reservations</field>
+        <field name="arch" type="xml">
+            <form string="Reserve a Book">
+                <sheet>
+                    <group>
+                        <field name="user_id"/>
+                        <field name="library_id"/>
+                        <field name="reservation_date"/>
+                        <field name="reservation_end_date"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Reserve"
+                            type="object"
+                            name="action_reserve_book"
+                            class="btn-primary"/>
+                    <button string="Cancel"
+                            class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- ACCIÓN DEL WIZARD -->
+    <record id="action_book_reservations_wizard" model="ir.actions.act_window">
+        <field name="name">Book Reservations</field>
+        <field name="res_model">book.reservations</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field> <!-- Importante: wizard se abre en modal -->
+    </record>
+
+</odoo>

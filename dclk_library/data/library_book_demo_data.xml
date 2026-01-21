@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="library_book_demo_1" model="library.book">
+        <field name="title">Clean Code</field>
+        <field name="author">Robert C. Martin</field>
+        <field name="publish_date">2008-08-01</field>
+    </record>
+
+    <record id="library_book_demo_2" model="library.book">
+        <field name="title">The Pragmatic Programmer</field>
+        <field name="author">Andrew Hunt, David Thomas</field>
+        <field name="publish_date">1999-10-20</field>
+    </record>
+
+    <record id="library_book_demo_3" model="library.book">
+        <field name="title">Design Patterns</field>
+        <field name="author">Erich Gamma et al.</field>
+        <field name="publish_date">1994-10-31</field>
+    </record>
+
+</odoo>
