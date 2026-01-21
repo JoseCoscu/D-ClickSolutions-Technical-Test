@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_library_book_librarian,library.book librarian,model_library_book,dclk_library.group_library_librarian,1,1,1,1
+access_library_book_admin,library.book admin,model_library_book,base.group_system,1,1,1,1

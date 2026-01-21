@@ -3,7 +3,7 @@
     'version': '18.0.1.0.0',
     'summary': 'Library book management with librarian role',
     'description': """
-Library Management (Odoo 18)
+Library Management
 ===========================
 - Manage library books
 - Librarian security group
@@ -18,7 +18,8 @@ Library Management (Odoo 18)
     'data': [
         'security/library_groups.xml',
         'security/ir.model.access.csv',
-        # 'views/library_book_views.xml',
+        'views/library_book_views.xml',
+        'data/library_book_demo_data.xml',
         # 'views/library_menus.xml',
     ],
     'installable': True,
