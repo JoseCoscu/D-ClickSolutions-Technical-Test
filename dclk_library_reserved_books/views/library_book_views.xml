@@ -32,6 +32,10 @@
                 </group>
             </xpath>
 
+            <xpath expr="//field[@name='is_borrowed']" position="replace">
+
+            </xpath>
+
         </field>
     </record>
 
