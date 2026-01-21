@@ -1,24 +1,25 @@
 {
-    'name': 'Library Management Ext',
+    'name': 'Library Management Reserved Books',
     'version': '18.0.1.0.0',
-    'summary': 'Library book management with librarian role',
+    'summary': 'Library book management reserved',
     'description': """
 Library Management
 ===========================
-- Manage library books
-- Librarian security group
-- Access control by role
+- Manage library books state
+- Manage books reserves
     """,
     'author': 'JoseCoscu',
     'website': 'https://github.com/JoseCoscu',
     'category': 'Productivity',
     'depends': [
-        'base','dclk_library', 'mail'
+        'base','dclk_library', 'dclk_library_extend'
     ],
     'data': [
-        'security/library_groups.xml',
         'security/ir.model.access.csv',
         'views/library_book_views.xml',
+        'views/library_library.xml',
+        'data/library_library_data.xml',
+        'wizards/library_reservations_views.xml'
     ],
     'installable': True,
     'application': False,

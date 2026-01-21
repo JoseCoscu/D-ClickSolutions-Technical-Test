@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_library_book_form_inherit_button" model="ir.ui.view">
+        <field name="name">library.book.form.inherit.button</field>
+        <field name="model">library.book</field>
+        <field name="inherit_id" ref="dclk_library.view_library_book_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header" position="inside">
+                <button name="reserve_book"
+                        type="object"
+                        string="Reserve"
+                        class="btn-primary"
+                        invisible="state == 'reserved'"/>
+
+                <button name="return_book"
+                        type="object"
+                        string="Return Book"
+                        class="btn-primary"
+                        invisible="state != 'reserved'"/>
+
+                <field name="state" widget="statusbar"/>
+
+            </xpath>
+
+            <xpath expr="//form/sheet" position="inside">
+                <group>
+                    <group>
+                        <field name="reserved_to" invisible="state!='reserved'"/>
+                        <field name="reserved_date" invisible="state!='reserved'"/>
+                        <field name="reserved_end_date" invisible="state!='reserved'"/>
+                    </group>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+
+
+    <record id="view_library_book_list_inherit" model="ir.ui.view">
+        <field name="name">library.book.list.inherit.add.field</field>
+        <field name="model">library.book</field>
+        <field name="inherit_id" ref="dclk_library.view_library_book_tree"/>
+        <field name="arch" type="xml">
+
+            <!-- Agregar campo dentro del list -->
+            <xpath expr="//list" position="inside">
+                <field name="state"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

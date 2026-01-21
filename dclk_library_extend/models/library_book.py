@@ -7,8 +7,6 @@ class LibraryBook(models.Model):
 
     is_borrowed = fields.Boolean('Is borrowed', readonly=True, tracking=True)
 
-    # state = fields.Selection([('available', 'Available'), ('borrowed', 'Borrowed'), ('reserved', 'Reserved')],
-    #                          default='available')
 
     def borrow_book(self):
         self.is_borrowed = True

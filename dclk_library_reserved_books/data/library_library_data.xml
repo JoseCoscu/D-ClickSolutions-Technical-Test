@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="library_demo_main" model="library.library">
+        <field name="name">Central Library</field>
+    </record>
+
+    <record id="library_demo_west" model="library.library">
+        <field name="name">West Side Library</field>
+    </record>
+
+    <record id="library_demo_university" model="library.library">
+        <field name="name">University Library</field>
+    </record>
+
+</odoo>

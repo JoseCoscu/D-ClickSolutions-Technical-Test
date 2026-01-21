@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_library_library_user,Library: User,model_library_library,dclk_library_extend.group_library_librarian,1,1,1,0
+access_library_library_manager,Library: Manager,model_library_library,base.group_system,1,1,1,1
+access_book_reservations_user,Book Reservations: User,model_book_reservations,dclk_library_extend.group_library_librarian,1,1,1,0
+access_book_reservations_manager,Book Reservations: Manager,model_book_reservations,base.group_system,1,1,1,1
